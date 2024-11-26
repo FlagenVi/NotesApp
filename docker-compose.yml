@@ -13,6 +13,11 @@ services:
     stdin_open: true
     tty: true
 
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+
   db:
     image: mysql:8.0
     container_name: noteapp_db
