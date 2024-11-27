@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
-
+use App\Http\Controllers\NoteController;
 
 
 /*
@@ -35,5 +35,9 @@ Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])->
 Route::post('/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
 Route::get('/reset-password/{token}', [PasswordResetLinkController::class, 'edit'])->name('password.reset');
 Route::post('/reset-password', [PasswordResetLinkController::class, 'update'])->name('password.update');
+
+Route::middleware(['auth'])->group(function () {
+    Route::resource('notes', NoteController::class);
+});
 
 require __DIR__.'/auth.php';
