@@ -5,7 +5,7 @@
                 <a href="{{ route('dashboard') }}" class="text-gray-800 text-lg font-bold">NotesApp</a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="{{ route('notes.index') }}" class="text-gray-600 hover:text-gray-800">Notes</a>
+                <a href="{{ route('profile.show') }}" class="text-gray-600 hover:text-gray-800">Profile</a>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button type="submit" class="text-gray-600 hover:text-gray-800">Logout</button>
